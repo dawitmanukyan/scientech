@@ -1,0 +1,81 @@
+.codeshots{
+    margin-top: 230px;
+    &__frame{
+        width: 300px;
+        filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.2));
+        @media screen and (max-width: 730px){
+            width: 200px;
+        }
+    }
+    .container{
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-evenly;
+        height: 280px;
+        background-image: url(../../img/background/shortcode.png);
+        background-size: 100%;
+        background-position: 0;
+        border-radius: 20px;
+        @media screen and (max-width: 730px){
+            height: 250px;
+        }
+        @media screen and (max-width: 635px){
+            flex-direction: column;
+            align-items: center;
+            justify-content: end;
+            height: 280px;
+        }
+    }
+    &__logo-text{
+        display: flex;
+        align-items: center;
+        color: #fff;
+        div{
+            &:first-child{
+                filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.356));
+            }
+        }
+        img{
+            width: 170px;
+            filter: drop-shadow(0 6px 0 rgb(255, 255, 255));
+            @media screen and (max-width: 730px){
+                width: 140px;
+            }
+            @media screen and (max-width: 635px){
+                width: 110px;
+            }
+        }
+        h3{
+            font-family: 'Cinzel', serif;
+            font-size: 33px;
+            @media screen and (max-width: 635px){
+                font-size: 25px;
+            }
+        }
+        p{
+            @media screen and (max-width: 730px){
+                font-size: 12px;
+            }
+        }
+        &-btn{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 50px;
+            @media screen and (max-width: 635px){
+                margin-bottom: 20px;
+            }
+            button{
+                padding: 5px 23px;
+                background-color: #fff;
+                border: none;
+                color: $purple;
+                border-radius: 50px;
+                transition: 0.3s;
+                &:hover{
+                    letter-spacing: 0.9px;
+                }
+            }
+        }
+    }
+}

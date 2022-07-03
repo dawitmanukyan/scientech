@@ -1,0 +1,103 @@
+.login{
+    position: fixed;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    &__img{
+        margin-right: 80px;
+        @media screen and (max-width: 875px){
+            display: none;
+        }
+        img{
+            width: 450px;
+        }
+    }
+    &__content{
+        background-color: #fff;
+        width: 300px;
+        box-sizing: border-box;
+        padding: 15px;
+        hr{
+            margin-bottom: 0;
+        }
+        label{
+            display: inline-block;
+            font-size: 12px;
+            background-color: #fff;
+            padding: 0 2px;
+            transform: translateY(9px) translateX(10px);
+        }
+        input{
+            display: block;
+            margin-bottom: 10px;
+            width: 100%;
+            font-size: 13px;
+            padding: 3px 5px;
+            box-sizing: border-box;
+            &:focus{
+                outline: none;
+                border: 2px solid $purple;
+                border-radius: 4px;
+            }
+            &[type="checkbox"]{
+                position: absolute;
+                margin: 0;
+                display: inline;
+                right: 5px;
+                bottom: 2px;
+                appearance: none;
+                content: url(../../img/icon/see.svg);
+                width: 30px;
+                cursor: pointer;
+                border: none;
+                outline: none;
+                &:checked{
+                    content: url(../../img/icon/no-see.svg);
+                    border: none;
+                    outline: none;
+                }
+            }
+        }
+        &__password{
+            position: relative;
+        }
+        button{
+            width: 100%;
+            background-color: $purple;
+            color: #fff;
+            border: none;
+            padding: 5px 0;
+            border-radius: 4px;
+            transition: 0.3s;
+            margin-top: 20px;
+            display: block;
+            margin-bottom: 10px;
+            &:hover{
+                box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2);
+                transform: translateY(-3px);
+            }
+        }
+        p{
+            font-size: 13px;
+            margin-top: 15px;
+            margin-bottom: 0;
+            span{
+                color: $purple;
+                font-weight: 600;
+                cursor: pointer;
+            }
+        }
+        b{
+            color: red;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            text-align: center;
+            display: block;
+        }
+    }
+}

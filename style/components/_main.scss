@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap');
+
+$purple: #7900e0;
+
+
+body, *{
+    margin: 0;
+    padding: 0;
+}
+body{
+    &.scroll{
+        overflow: hidden;
+    }
+    &::-webkit-scrollbar{
+        width: 7px;
+        &-thumb{
+            background-color: $purple;
+        }
+    }
+}
+p, h1, h2, h3{
+    margin: 0;
+}
+.body{
+    width: 100%;
+    overflow: hidden;
+}
+
+.container{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    @media screen and (max-width: 445px) {
+        width: 100%;
+    }
+}

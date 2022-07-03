@@ -1,0 +1,150 @@
+.live-chat{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 10;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    &__openner{
+        background-color: #8d93ab;
+        width: 55px;
+        height: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin-top: 0.5px;
+        z-index: 1;
+        cursor: pointer;
+        img{
+            width: 35px;
+        }
+        &__main{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            span{
+                display: block;
+                border-radius: 50%;
+                position: absolute;
+                // background: rgb(255,255,255);
+                background: radial-gradient(circle, rgba(255,255,255,0) 40%, rgba(61, 56, 68, 0.1) 100%);
+                &:first-child{
+                    animation: chat 1s 0s infinite;
+                }
+                &:nth-child(2){
+                    animation: chat 2s 0s infinite;
+                }
+                &:last-child{
+                    animation: chat 1s 0s infinite;
+                }
+            }
+            @keyframes chat {
+                0%{
+                    width: 0;
+                    height: 0;
+                    border: none;
+                    opacity: 0;
+                }
+                100%{
+                    width: 100px;
+                    height: 100px;
+                    // border: 2px solid #8d93ab;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    &__contnet{
+        background-color: #fff;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
+        margin-right: 5px;
+        display: none;
+        &__header{
+            background-color: $purple;
+            color: #fff;
+            padding: 15px;
+            p{
+                font-size: 13px;
+            }
+        }
+        &__chat{
+            background-color: #fff;
+            height: 300px;
+            width: 270px;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            align-items: start;
+            gap: 15px;
+            box-sizing: border-box;
+            padding: 10px;
+            p{
+                padding: 4px 13px;
+                background: #eee;
+                font-size: 14px;
+                border-radius: 20px;
+                max-width: 160px;
+                &.admin{
+                    background-color: $purple;
+                    color: #fff;
+                    margin: 0 0 0 auto;
+                }
+            }
+        }
+        &__send{
+            display: flex;
+            justify-content: space-between;
+            padding: 5px;
+            textarea{
+                min-height: 35px;
+                height: 35px;
+                font-size: 12px;
+                border: 2px solid $purple;
+                border-radius: 50px;
+                margin-right: 10px;
+                padding: 1px 11px;
+                box-sizing: border-box;
+                width: 210px;
+                resize: both;
+                &::-webkit-scrollbar{
+                    display: none;
+                }
+            }
+            button{
+                background-color: $purple;
+                border: none;
+                width: 35px;
+                height: 35px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                box-sizing: border-box;
+                padding-right: 3px;
+                img{
+                    width: 20px;
+                }
+            }
+        }
+    }
+    &--active{
+        .live-chat__openner{
+            &__main{
+                span{
+                    animation: none;
+                }
+            }
+            img{
+                content: url(../../img/icon/close.svg);
+                width: 25px;
+            }
+        }
+        .live-chat__contnet{
+            display: block;
+        }
+    }
+}

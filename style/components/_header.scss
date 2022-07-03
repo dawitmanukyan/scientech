@@ -1,0 +1,100 @@
+.header{
+    width: 100%;
+    height: 100vh;
+    background-image: url(../../img/background/header_back_img.svg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    position: relative;
+    .container{
+        position: unset;
+    }
+    &__content{
+        color: #fff;
+        text-align: center;
+        h1{
+            font-family: 'Cinzel', serif;
+            font-size: 70px;
+            line-height: 50px;
+            @media screen and (max-width: 775px){
+                font-size: 50px;
+                line-height: 30px;
+            }
+            @media screen and (max-width: 485px){
+                font-size: 30px;
+                line-height: 10px;
+                span{
+                    font-size: 100px;
+                    margin-bottom: 45px;
+                    display: block;
+                }
+            }
+        }
+        b{
+            font-family: 'Bokonique';
+            @media screen and (max-width: 775px){
+                font-size: 13px;
+            }
+            @media screen and (max-width: 485px){
+                font-size: 12px;
+            }
+        }
+        p{
+            font-family: 'Bokonique';
+            font-size: 14px;
+            margin-top: 20px;
+            line-height: 22px;
+            @media screen and (max-width: 775px){
+                font-size: 12px;
+                margin-top: 10px;
+            }
+            @media screen and (max-width: 775px){
+                font-size: 11px;
+            }
+        }
+        &__bottom-arrow{
+            fill: none;
+            stroke: #fff;
+            stroke-width: 0;
+            stroke-dasharray: 80;
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            bottom: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60px;
+            transition: 0.3s;
+            &:hover{
+                stroke-width: 3px;
+                stroke-dasharray: 28;
+                bottom: 60px;
+                & img{
+                    animation: none;
+                }
+            }
+            svg{
+                width: 60px;
+                height: 60px;
+            }
+            img{
+                width: 42px;
+                animation: arrow 2s 0s linear infinite;
+                cursor: pointer;
+                transition: 0.3s;
+                position: absolute;
+                @keyframes arrow {
+                    100%, 0%{
+                        opacity: 1;
+                    }
+                    50%{
+                        opacity: 0.4;
+                    }
+                }
+            }
+        }
+    }
+}
